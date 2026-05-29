@@ -4,107 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akahoshi's Arts</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="background"></div>
-
     <header>
-        <div class="logo">
-            <img src="logo.png" alt="Akahoshi's Arts">
+
+        <div class="logo-container">
+            <img
+                src="assets/logo/logo.png"
+                alt="Akahoshi's Arts"
+                class="logo"
+            >
         </div>
 
         <nav>
-            <a href="#cards">Cards</a>
-            <a href="#banners">Banners</a>
-            <a href="#ia">IA</a>
-            <a href="#info">Info</a>
+            <ul>
+                <li><a href="#">Cards</a></li>
+                <li><a href="#">Banners</a></li>
+                <li><a href="#">IA</a></li>
+                <li><a href="#">Info</a></li>
+            </ul>
         </nav>
+
     </header>
 
-    <main>
-
-        <section id="cards" class="content-card">
-            <h2>Cards</h2>
-            <p>Your card projects will appear here.</p>
-        </section>
-
-        <section id="banners" class="content-card">
-            <h2>Banners</h2>
-            <p>Your banner projects will appear here.</p>
-        </section>
-
-        <section id="ia" class="content-card">
-            <h2>IA</h2>
-            <p>AI creations and experiments.</p>
-        </section>
-
-        <section id="info" class="content-card">
-            <h2>Info</h2>
-            <p>About the artist.</p>
-        </section>
-
-    </main>
-
 </body>
-</html>
-
-/* ===== GENERAL ===== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family: "Segoe UI", sans-serif;
-    color:white;
-    min-height:100vh;
-    overflow-x:hidden;
-}
-
-/* ===== BACKGROUND ===== */
-
-.background{
-    position:fixed;
-    inset:0;
-
-    background:
-    linear-gradient(
-        180deg,
-        #26123f 0%,
-        #120d1f 50%,
-        #070709 100%
-    );
-
-    z-index:-2;
-}
-
-/* Grid dorado */
-
-.background::after{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background-image:
-        linear-gradient(
-            rgba(200,169,107,0.12) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(200,169,107,0.12) 1px,
-            transparent 1px
-        );
-
-    background-size:40px 40px;
+</html>    background-size:40px 40px;
 
     z-index:-1;
 }
