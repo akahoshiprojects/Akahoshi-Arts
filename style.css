@@ -36,11 +36,10 @@ body {
 /* LOGO */
 
 .logo {
-    width: 550px;
-    max-width: 90vw;
+    width: 95vw;
     height: auto;
 
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 /* BOTONES */
