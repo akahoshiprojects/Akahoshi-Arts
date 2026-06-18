@@ -42,6 +42,8 @@ const cards = [
     { image: "Paint34.png", name: "Mahiru Shiina", series: "The Angel Next Door Spoils Me Rotten" },
     { image: "Paint35.png", name: "Tohka Yatogami", series: "Date a Live" }
 
+    { image: "Paint36.webp", name: "Winter", series: "Aespa" },
+    { image: "Paint32.png", name: "Hitagi Senjougahara", series: "Bakemonogatari" },
 ];
 
 
