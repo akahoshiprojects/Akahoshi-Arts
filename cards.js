@@ -43,7 +43,7 @@ const cards = [
     { image: "Paint35.png", name: "Tohka Yatogami", series: "Date a Live" }
 
     { image: "Paint36.webp", name: "Winter", series: "Aespa" },
-    { image: "Paint32.png", name: "Hitagi Senjougahara", series: "Bakemonogatari" },
+    { image: "Paint37.png", name: "Hitagi Senjougahara", series: "Bakemonogatari" },
 ];
 
 
