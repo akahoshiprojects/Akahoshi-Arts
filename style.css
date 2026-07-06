@@ -230,48 +230,77 @@ body {
     display: block;
 }
 
-/* AI */
+/* AI PAGE */
 
-.ai-toolbar{
+.ai-toolbar {
 
-    display:flex;
+    position: relative;
 
-    justify-content:center;
+    display: flex;
 
-    align-items:center;
+    justify-content: center;
 
-    gap:20px;
+    align-items: center;
 
-    margin-bottom:30px;
+    margin-bottom: 30px;
+
 }
 
-#tagSearch{
 
-    width:420px;
+.search-box {
 
-    max-width:80%;
+    position: relative;
 
-    padding:10px 15px;
+    width: 420px;
 
-    border-radius:8px;
-
-    border:none;
-
-    font-size:16px;
 }
 
-.request-button{
 
-    background:none;
+#tagSearch {
 
-    border:none;
+    width: 100%;
 
-    cursor:pointer;
+    padding: 12px 45px 12px 15px;
+
+    border-radius: 10px;
+
+    border: none;
+
+    font-size: 16px;
+
 }
 
-.request-button img{
 
-    width:42px;
+.search-icon {
 
-    height:auto;
+    position: absolute;
+
+    right: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+}
+
+
+.request-button {
+
+    position: absolute;
+
+    right: 40px;
+
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+
+}
+
+
+.request-button img {
+
+    width: 42px;
+
 }
