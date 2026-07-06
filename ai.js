@@ -12,7 +12,8 @@ const aiArts = [
 ];
 
 
-// Crear lista única de tags
+// Obtener todos los tags disponibles sin repetir
+
 const allTags = [
     ...new Set(
         aiArts.flatMap(art => art.tags)
@@ -20,7 +21,7 @@ const allTags = [
 ];
 
 
-// Galería
+// Cargar galería
 
 const gallery = document.querySelector(".gallery-grid");
 
@@ -46,24 +47,18 @@ aiArts.forEach(art => {
 });
 
 
-// Buscador de tags
+// Buscador
 
 const searchInput = document.querySelector("#tagSearch");
 
-
-// Crear caja de sugerencias
-
-const suggestions = document.createElement("div");
-
-suggestions.classList.add("tag-suggestions");
-
-searchInput.parentElement.appendChild(suggestions);
+const suggestions = document.querySelector(".tag-suggestions");
 
 
 
 searchInput.addEventListener("input", () => {
 
-    const text = searchInput.value.toLowerCase();
+    const text = searchInput.value.toLowerCase().trim();
+
 
     suggestions.innerHTML = "";
 
@@ -74,17 +69,24 @@ searchInput.addEventListener("input", () => {
 
 
     const matches = allTags.filter(tag =>
+
         tag.toLowerCase().includes(text)
+
     );
+
 
 
     matches.forEach(tag => {
 
+
         const option = document.createElement("div");
+
 
         option.classList.add("tag-option");
 
+
         option.textContent = tag;
+
 
 
         option.addEventListener("click", () => {
@@ -96,8 +98,11 @@ searchInput.addEventListener("input", () => {
         });
 
 
+
         suggestions.appendChild(option);
 
+
     });
+
 
 });
