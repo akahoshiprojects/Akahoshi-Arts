@@ -1,114 +1,157 @@
-/* RESET */
+/* ==========================================================
+   RESET
+========================================================== */
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
 
-/* BODY */
+
+/* ==========================================================
+   BODY
+========================================================== */
 
 html,
 body {
+
     min-height: 100vh;
 
     font-family: Arial, sans-serif;
 
     background:
-    radial-gradient(
-        circle at center,
-        #850000 0%,
-        #3d0012 25%,
-        #180623 55%,
-        #060408 80%,
-        #000000 100%
-    );
+        radial-gradient(
+            circle at center,
+            #850000 0%,
+            #3d0012 25%,
+            #180623 55%,
+            #060408 80%,
+            #000000 100%
+        );
+
 }
-/* CONTENEDOR PRINCIPAL */
+
+
+/* ==========================================================
+   HOME
+========================================================== */
 
 .home {
+
     width: 100%;
+
     max-width: 1000px;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 
+    margin: auto;
+
     padding: 40px 20px;
+
 }
 
-/* LOGO */
+
+/* ==========================================================
+   LOGO
+========================================================== */
 
 .logo {
+
     width: 95vw;
+
     height: auto;
 
     margin-bottom: 40px;
+
 }
 
-/* BOTONES */
+
+/* ==========================================================
+   BOTONES
+========================================================== */
 
 .menu-grid {
+
     display: grid;
 
     grid-template-columns: repeat(2, 1fr);
 
     gap: 50px;
+
 }
 
-/* ENLACES */
 
 .menu-button {
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
-    transition: transform 0.2s ease;
+    transition: transform .2s ease;
+
 }
+
 
 .menu-button:hover {
+
     transform: scale(1.05);
+
 }
 
-/* ICONOS */
 
 .menu-button img {
+
     width: 280px;
+
     height: auto;
 
     display: block;
-}
-
-/* MÓVIL */
-
-@media (max-width: 600px) {
-
-    .logo {
-        width: 320px;
-    }
-
-    .menu-grid {
-        gap: 20px;
-    }
-
-    .menu-button img {
-        width: 130px;
-    }
 
 }
 
-/* GALLERY */
+
+/* ==========================================================
+   TÍTULOS
+========================================================== */
 
 .gallery-title {
 
     text-align: center;
 
-    color: white;
+    color: #ffffff;
 
-    margin-top: 40px;
+    margin: 40px 0;
 
-    margin-bottom: 40px;
 }
+
+
+/* ==========================================================
+   GALERÍA (Cards)
+========================================================== */
+
+.gallery-page {
+
+    width: 100%;
+
+    max-width: 1500px;
+
+    margin: auto;
+
+    padding: 20px;
+
+}
+
 
 .gallery-grid {
 
@@ -118,120 +161,135 @@ body {
 
     gap: 30px;
 
-    max-width: 1400px;
-
-    width: 100%;
-
-    margin: 0 auto;
-
-    padding: 20px;
 }
+
 
 .card-item {
 
     text-align: center;
 
-    width: 100%;
 }
+
 
 .card-item img {
 
     width: 100%;
 
-    max-width: 250px;
-
-    height: auto;
-
     border-radius: 10px;
 
-    display: block;
+    cursor: pointer;
 
-    margin: 0 auto;
+    transition: transform .2s;
 
-    transition: transform 0.2s ease;
 }
+
 
 .card-item img:hover {
 
     transform: scale(1.03);
 
+}
+
+
+/* ==========================================================
+   BANNERS
+========================================================== */
+
+.banner-gallery {
+
+    width: 100%;
+
+    max-width: 1300px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 40px;
+
+    padding: 20px;
+
+}
+
+
+.banner-item {
+
+    text-align: center;
+
+}
+
+
+.banner-item img {
+
+    width: 100%;
+
+    border-radius: 10px;
+
     cursor: pointer;
-}
-
-/* INFO OCULTA */
-
-.card-item h3,
-.card-item p {
-
-    display: none;
-}
-
-/* TABLET */
-
-@media (max-width: 1024px) {
-
-    .gallery-grid {
-
-        grid-template-columns: repeat(3, 1fr);
-    }
 
 }
 
-/* MOBILE */
+
+/* ==========================================================
+   RESPONSIVE GENERAL
+========================================================== */
 
 @media (max-width: 768px) {
 
     .gallery-grid {
 
         grid-template-columns: repeat(2, 1fr);
+
     }
 
 }
 
-/* GALLERY PAGE */
 
-.gallery-page {
+@media (max-width: 600px) {
+
+    .logo {
+
+        width: 320px;
+
+    }
+
+    .menu-grid {
+
+        gap: 20px;
+
+    }
+
+    .menu-button img {
+
+        width: 130px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   AI PAGE
+========================================================== */
+
+.ai-page {
 
     width: 100%;
 
-    max-width: 1600px;
+    max-width: 1500px;
 
-    margin: 0 auto;
-}
-
-/* BANNER PAGE */
-
-.banner-page {
-
-    width: 100%;
-    max-width: 1600px;
-
-    margin: 0 auto;
-}
-
-.banner-gallery {
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 40px;
+    margin: auto;
 
     padding: 20px;
+
 }
 
-.banner-item img {
 
-    width: 100%;
-
-    height: auto;
-
-    border-radius: 12px;
-
-    display: block;
-}
-
-/* AI PAGE */
-
+/* ==========================================================
+   BARRA SUPERIOR
+========================================================== */
 
 .ai-toolbar {
 
@@ -243,10 +301,14 @@ body {
 
     align-items: center;
 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 
 }
 
+
+/* ==========================================================
+   BUSCADOR
+========================================================== */
 
 .search-box {
 
@@ -263,13 +325,15 @@ body {
 
     width: 100%;
 
-    padding: 12px 45px 12px 15px;
-
-    border-radius: 10px;
+    padding: 12px 42px 12px 15px;
 
     border: none;
 
+    border-radius: 10px;
+
     font-size: 16px;
+
+    outline: none;
 
 }
 
@@ -284,8 +348,14 @@ body {
 
     transform: translateY(-50%);
 
+    pointer-events: none;
+
 }
 
+
+/* ==========================================================
+   BOTÓN DE PETICIONES
+========================================================== */
 
 .request-button {
 
@@ -306,11 +376,46 @@ body {
 
     width: 42px;
 
+    height: auto;
+
 }
 
 
+/* ==========================================================
+   INFORMACIÓN DE LA IMAGEN
+========================================================== */
 
-/* TAGS DE IMAGEN */
+.ai-info {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 10px;
+
+}
+
+
+.ai-name {
+
+    color: #7fd8ff;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+}
+
+
+/* ==========================================================
+   TAGS
+========================================================== */
 
 .ai-tags {
 
@@ -320,28 +425,21 @@ body {
 
     gap: 6px;
 
-    margin-top: 8px;
-
 }
 
 
 .tag {
 
-    background: rgba(212, 175, 55, 0.2);
-
     color: #d4af37;
-
-    padding: 3px 8px;
-
-    border-radius: 12px;
 
     font-size: 12px;
 
 }
 
 
-
-/* SUGERENCIAS DEL BUSCADOR */
+/* ==========================================================
+   SUGERENCIAS DEL BUSCADOR
+========================================================== */
 
 .tag-suggestions {
 
@@ -357,40 +455,52 @@ body {
 
     max-width: 80vw;
 
-    background: #060408;
+    margin-top: 5px;
+
+    background: #111111;
 
     border-radius: 8px;
 
     overflow: hidden;
 
-    z-index: 10;
+    z-index: 100;
+
+    box-shadow: 0 0 15px rgba(0,0,0,.4);
 
 }
 
 
 .tag-option {
 
+    padding: 10px 15px;
+
     color: white;
 
-    padding: 10px;
-
     cursor: pointer;
+
+    transition: background .2s;
 
 }
 
 
 .tag-option:hover {
 
-    background: rgba(212, 175, 55, 0.2);
+    background: rgba(212,175,55,.2);
 
 }
 
 
-
-/* MOBILE */
+/* ==========================================================
+   RESPONSIVE AI
+========================================================== */
 
 @media (max-width: 600px) {
 
+    .search-box {
+
+        width: 70vw;
+
+    }
 
     .request-button {
 
@@ -398,26 +508,10 @@ body {
 
     }
 
-
     .request-button img {
 
-        width: 35px;
+        width: 34px;
 
     }
-
-
-}
-
-
-
-.card-item h3 {
-
-    color: #7fd8ff;
-
-    margin-top: 10px;
-
-    margin-bottom: 8px;
-
-    font-weight: bold;
 
 }
