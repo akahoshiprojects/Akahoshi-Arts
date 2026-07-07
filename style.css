@@ -448,17 +448,11 @@ body {
 
     position: absolute;
 
-    top: 100%;
+    top: calc(100% + 5px);
 
-    left: 50%;
+    left: 0;
 
-    transform: translateX(-50%);
-
-    width: 420px;
-
-    max-width: 80vw;
-
-    margin-top: 5px;
+    width: 100%;
 
     background: #111111;
 
