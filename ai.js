@@ -48,7 +48,9 @@ aiArts.forEach(art => {
 
     <div class="ai-info">
 
-        <span class="ai-name">${art.name}</span>
+        <span class="ai-name">
+            ${art.name}
+        </span>
 
         ${art.tags.map(tag =>
             `<span class="tag">${tag}</span>`
@@ -56,7 +58,6 @@ aiArts.forEach(art => {
 
     </div>
 `;
-
 
 
 const allTags = [
