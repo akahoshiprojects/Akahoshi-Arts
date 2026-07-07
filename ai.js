@@ -96,10 +96,59 @@ function loadGallery(list) {
 
 
 // =========================
-// TAGS
+// BUSQUEDA GENERAL
 // =========================
 
-const allTags = [...new Set(aiArts.flatMap(art => art.tags))].sort();
+const searchData = [];
+
+
+aiArts.forEach(art => {
+
+    searchData.push({
+
+        text: art.name,
+
+        type: "character"
+
+    });
+
+
+    if (art.series) {
+
+        searchData.push({
+
+            text: art.series,
+
+            type: "series"
+
+        });
+
+    }
+
+
+    art.tags.forEach(tag => {
+
+        searchData.push({
+
+            text: tag,
+
+            type: "tag"
+
+        });
+
+    });
+
+});
+
+
+// Eliminar duplicados
+
+const uniqueSearch = searchData.filter((item, index, self) =>
+    index === self.findIndex(t =>
+        t.text === item.text &&
+        t.type === item.type
+    )
+);
 
 
 
@@ -111,40 +160,71 @@ searchInput.addEventListener("input", () => {
 
     const text = searchInput.value.trim().toLowerCase();
 
+
     suggestions.innerHTML = "";
+
 
     if (text === "") return;
 
-    allTags
-        .filter(tag => tag.toLowerCase().includes(text))
-        .forEach(tag => {
+
+
+    uniqueSearch
+
+        .filter(item =>
+            item.text.toLowerCase().includes(text)
+        )
+
+        .forEach(item => {
+
 
             const option = document.createElement("div");
 
+
             option.className = "tag-option";
 
-            option.textContent = tag;
+
+            option.innerHTML = `
+
+                ${item.text}
+
+                <small>
+                    • ${item.type}
+                </small>
+
+            `;
+
+
 
             option.onclick = () => {
 
-                searchInput.value = tag;
+                searchInput.value = item.text;
 
                 suggestions.innerHTML = "";
 
+
                 const filtered = aiArts.filter(art =>
-                    art.tags.includes(tag)
+
+                    art.name === item.text ||
+
+                    art.series === item.text ||
+
+                    art.tags.includes(item.text)
+
                 );
+
 
                 loadGallery(filtered);
 
             };
 
+
             suggestions.appendChild(option);
+
 
         });
 
-});
 
+});
 
 
 // =========================
