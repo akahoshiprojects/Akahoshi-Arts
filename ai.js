@@ -67,26 +67,3 @@ searchInput.addEventListener("input", () => {
         });
 
 });
-
-
-            const option = document.createElement("div");
-
-
-            option.classList.add("tag-option");
-
-
-            option.textContent = tag;
-
-
-
-            suggestions.appendChild(option);
-
-
-        }
-
-
-    });
-
-
-});
-});
