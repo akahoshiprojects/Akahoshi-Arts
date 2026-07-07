@@ -537,14 +537,15 @@ body {
 }
 
 
-.ai-gallery .card-item {
+.ai-card {
 
     width: 100%;
 
+    text-align: center;
+
 }
 
-
-.ai-gallery .card-item img {
+.ai-card img {
 
     width: 100%;
 
