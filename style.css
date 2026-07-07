@@ -407,3 +407,17 @@ body {
 
 
 }
+
+
+
+.card-item h3 {
+
+    color: #7fd8ff;
+
+    margin-top: 10px;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+}
