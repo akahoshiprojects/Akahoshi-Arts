@@ -526,9 +526,13 @@ body {
 
 .ai-gallery {
 
-    column-count: 4;
+    display: grid;
 
-    column-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px;
+
+    align-items: start;
 
 }
 
@@ -537,16 +541,16 @@ body {
 
     break-inside: avoid;
 
-    margin-bottom: 30px;
-
-    text-align: center;
-
 }
 
 
 .ai-gallery .card-item img {
 
     width: 100%;
+
+    height: auto;
+
+    display: block;
 
     border-radius: 10px;
 
@@ -557,7 +561,7 @@ body {
 
     .ai-gallery {
 
-        column-count: 2;
+        grid-template-columns: repeat(2, 1fr);
 
     }
 
@@ -568,7 +572,7 @@ body {
 
     .ai-gallery {
 
-        column-count: 1;
+        grid-template-columns: 1fr;
 
     }
 
