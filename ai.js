@@ -65,13 +65,19 @@ function loadGallery(list) {
 
             <div class="ai-info">
 
-                <span class="ai-name">${art.name}</span>
+                <span class="ai-name">
+        ${art.name}
+    </span>
 
-                ${art.tags.map(tag =>
-                    `<span class="tag">${tag}</span>`
-                ).join("")}
+    ${art.series ? 
+        `<span class="ai-series">${art.series}</span>` 
+        : ""}
 
-            </div>
+    ${art.tags.map(tag =>
+        `<span class="tag">${tag}</span>`
+    ).join("")}
+
+</div>
 
         `;
 
