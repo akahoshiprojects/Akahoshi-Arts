@@ -518,3 +518,58 @@ body {
     }
 
 }
+
+
+/* ==========================================================
+   AI MASONRY GALLERY
+========================================================== */
+
+.ai-gallery {
+
+    column-count: 4;
+
+    column-gap: 30px;
+
+}
+
+
+.ai-gallery .card-item {
+
+    break-inside: avoid;
+
+    margin-bottom: 30px;
+
+    text-align: center;
+
+}
+
+
+.ai-gallery .card-item img {
+
+    width: 100%;
+
+    border-radius: 10px;
+
+}
+
+
+@media (max-width: 768px) {
+
+    .ai-gallery {
+
+        column-count: 2;
+
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .ai-gallery {
+
+        column-count: 1;
+
+    }
+
+}
