@@ -2,7 +2,9 @@ const aiArts = [
 
     {
         image: "Ai01.png",
+
         name: "Ryomen Sukuna",
+
         tags: [
             "Jujutsu Kaisen",
             "Gender Bender"
@@ -12,42 +14,68 @@ const aiArts = [
 ];
 
 
-// Obtener todos los tags disponibles sin repetir
+// Crear lista de todos los tags disponibles
 
-const allTags = [
-    ...new Set(
-        aiArts.flatMap(art => art.tags)
-    )
-];
+let allTags = [];
 
 
-// Cargar galería
+aiArts.forEach(art => {
+
+    art.tags.forEach(tag => {
+
+        if (!allTags.includes(tag)) {
+
+            allTags.push(tag);
+
+        }
+
+    });
+
+});
+
+
+
+// Mostrar imágenes
 
 const gallery = document.querySelector(".gallery-grid");
 
 
 aiArts.forEach(art => {
 
-    const item = document.createElement("div");
 
-    item.classList.add("card-item");
+    const card = document.createElement("div");
+
+    card.classList.add("card-item");
 
 
-    item.innerHTML = `
+
+    card.innerHTML = `
 
         <img
             src="Assets/AI/${art.image}"
             alt="${art.name}">
 
+
+        <h3>
+            ${art.name}
+        </h3>
+
+
+        <p>
+            ${art.tags.join(" • ")}
+        </p>
+
     `;
 
 
-    gallery.appendChild(item);
+    gallery.appendChild(card);
+
 
 });
 
 
-// Buscador
+
+// Buscador de tags
 
 const searchInput = document.querySelector("#tagSearch");
 
@@ -57,6 +85,7 @@ const suggestions = document.querySelector(".tag-suggestions");
 
 searchInput.addEventListener("input", () => {
 
+
     const text = searchInput.value.toLowerCase().trim();
 
 
@@ -64,45 +93,38 @@ searchInput.addEventListener("input", () => {
 
 
     if (text === "") {
+
         return;
+
     }
 
 
-    const matches = allTags.filter(tag =>
 
-        tag.toLowerCase().includes(text)
-
-    );
+    allTags.forEach(tag => {
 
 
-
-    matches.forEach(tag => {
-
-
-        const option = document.createElement("div");
-
-
-        option.classList.add("tag-option");
-
-
-        option.textContent = tag;
+        if (tag.toLowerCase().includes(text)) {
 
 
 
-        option.addEventListener("click", () => {
-
-            searchInput.value = tag;
-
-            suggestions.innerHTML = "";
-
-        });
+            const option = document.createElement("div");
 
 
+            option.classList.add("tag-option");
 
-        suggestions.appendChild(option);
+
+            option.textContent = tag;
+
+
+
+            suggestions.appendChild(option);
+
+
+        }
 
 
     });
 
 
+});
 });
