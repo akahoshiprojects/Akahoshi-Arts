@@ -10,6 +10,24 @@ const aiArts = [
         image: "Ai02.png",
         name: "Ichigo Kurosaki",
         tags: ["Bleach", "Gender Bender"]
+    },
+
+    {
+        image: "Ai03.png",
+        name: "Doraemon",
+        tags: ["Doraemon", "Gender Bender", "design"]
+    },
+
+    {
+        image: "Ai04.png",
+        name: "Yami Sukehiro",
+        tags: ["Black Clover", "Gender Bender"]
+    },
+
+    {
+        image: "Ai05.png",
+        name: "Julius Novachrono",
+        tags: ["Black Clover", "Gender Bender"]
     }
 
 ];
