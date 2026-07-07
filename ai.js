@@ -44,16 +44,18 @@ aiArts.forEach(art => {
     card.classList.add("card-item");
 
     card.innerHTML = `
-        <img src="Assets/AI/${art.image}" alt="${art.name}">
-        <h3>${art.name}</h3>
-        <div class="ai-tags">
-            ${art.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
-        </div>
-    `;
+    <img src="Assets/AI/${art.image}" alt="${art.name}">
 
-    gallery.appendChild(card);
+    <div class="ai-info">
 
-});
+        <span class="ai-name">${art.name}</span>
+
+        ${art.tags.map(tag =>
+            `<span class="tag">${tag}</span>`
+        ).join("")}
+
+    </div>
+`;
 
 
 
