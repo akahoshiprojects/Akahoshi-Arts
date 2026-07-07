@@ -15,7 +15,7 @@ const aiArts = [
     {
         image: "Ai03.png",
         name: "Doraemon",
-        tags: ["Doraemon", "Gender Bender", "design"]
+        tags: ["Doraemon", "Gender Bender", "Design"]
     },
 
     {
@@ -37,6 +37,7 @@ const aiArts = [
 const gallery = document.querySelector(".gallery-grid");
 
 
+
 aiArts.forEach(art => {
 
     const card = document.createElement("div");
@@ -44,20 +45,25 @@ aiArts.forEach(art => {
     card.classList.add("card-item");
 
     card.innerHTML = `
-    <img src="Assets/AI/${art.image}" alt="${art.name}">
+        <img src="Assets/AI/${art.image}" alt="${art.name}">
 
-    <div class="ai-info">
+        <div class="ai-info">
 
-        <span class="ai-name">
-            ${art.name}
-        </span>
+            <span class="ai-name">
+                ${art.name}
+            </span>
 
-        ${art.tags.map(tag =>
-            `<span class="tag">${tag}</span>`
-        ).join("")}
+            ${art.tags.map(tag =>
+                `<span class="tag">${tag}</span>`
+            ).join("")}
 
-    </div>
-`;
+        </div>
+    `;
+
+    gallery.appendChild(card);
+
+});
+
 
 
 const allTags = [
@@ -65,8 +71,10 @@ const allTags = [
 ];
 
 
+
 const searchInput = document.querySelector("#tagSearch");
 const suggestions = document.querySelector(".tag-suggestions");
+
 
 
 searchInput.addEventListener("input", () => {
@@ -80,6 +88,8 @@ searchInput.addEventListener("input", () => {
         .forEach(tag => {
 
             const option = document.createElement("div");
+
+            option.classList.add("tag-option");
 
             option.textContent = tag;
 
