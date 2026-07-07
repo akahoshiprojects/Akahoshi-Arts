@@ -526,20 +526,18 @@ body {
 
 .ai-gallery {
 
-    display: grid;
+    column-count: 3;
 
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 30px;
-
-    align-items: start;
+    column-gap: 30px;
 
 }
 
 
 .ai-card {
 
-    width: 100%;
+    break-inside: avoid;
+
+    margin-bottom: 30px;
 
     text-align: center;
 
@@ -565,9 +563,7 @@ body {
 
     .ai-gallery {
 
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 15px;
+        column-count: 2;
 
     }
 
