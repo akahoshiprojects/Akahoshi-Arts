@@ -39,7 +39,7 @@ const aiArts = [
 
 
 
-const gallery = document.querySelector(".gallery-grid");
+const gallery = document.querySelector(".ai-gallery");;
 const searchInput = document.getElementById("tagSearch");
 const suggestions = document.querySelector(".tag-suggestions");
 
