@@ -3,31 +3,36 @@ const aiArts = [
     {
         image: "Ai01.png",
         name: "Ryomen Sukuna",
-        tags: ["Jujutsu Kaisen", "Gender Bender"]
+        series: "Jujutsu Kaisen",
+        tags: ["Gender Bender"]
     },
 
     {
         image: "Ai02.png",
         name: "Ichigo Kurosaki",
-        tags: ["Bleach", "Gender Bender"]
+        series: "Bleach",
+        tags: ["Gender Bender"]
     },
 
     {
         image: "Ai03.png",
         name: "Doraemon",
-        tags: ["Doraemon", "Gender Bender", "Design"]
+        series: "Doraemon",
+        tags: ["Gender Bender", "Design"]
     },
 
     {
         image: "Ai04.png",
         name: "Yami Sukehiro",
-        tags: ["Black Clover", "Gender Bender"]
+        series: "Black Clover",
+        tags: ["Gender Bender"]
     },
 
     {
         image: "Ai05.png",
         name: "Julius Novachrono",
-        tags: ["Black Clover", "Gender Bender"]
+        series: "Black Clover",
+        tags: ["Gender Bender"]
     }
 
 ];
