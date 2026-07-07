@@ -2,109 +2,71 @@ const aiArts = [
 
     {
         image: "Ai01.png",
-
         name: "Ryomen Sukuna",
+        tags: ["Jujutsu Kaisen", "Gender Bender"]
+    },
 
-        tags: [
-            "Jujutsu Kaisen",
-            "Gender Bender"
-        ]
+    {
+        image: "Ai02.png",
+        name: "Ichigo Kurosaki",
+        tags: ["Bleach", "Gender Bender"]
     }
 
 ];
 
 
-// Crear lista de todos los tags disponibles
-
-let allTags = [];
-
-
-aiArts.forEach(art => {
-
-    art.tags.forEach(tag => {
-
-        if (!allTags.includes(tag)) {
-
-            allTags.push(tag);
-
-        }
-
-    });
-
-});
-
-
-
-// Mostrar imágenes
 
 const gallery = document.querySelector(".gallery-grid");
 
 
 aiArts.forEach(art => {
 
-
     const card = document.createElement("div");
 
     card.classList.add("card-item");
 
-
-
     card.innerHTML = `
-
-        <img
-            src="Assets/AI/${art.image}"
-            alt="${art.name}">
-
-
-        <h3>
-            ${art.name}
-        </h3>
-
-
-        <p>
-            ${art.tags.join(" • ")}
-        </p>
-
+        <img src="Assets/AI/${art.image}" alt="${art.name}">
+        <h3>${art.name}</h3>
+        <div class="ai-tags">
+            ${art.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
+        </div>
     `;
 
-
     gallery.appendChild(card);
-
 
 });
 
 
 
-// Buscador de tags
+const allTags = [
+    ...new Set(aiArts.flatMap(art => art.tags))
+];
+
 
 const searchInput = document.querySelector("#tagSearch");
-
 const suggestions = document.querySelector(".tag-suggestions");
-
 
 
 searchInput.addEventListener("input", () => {
 
-
-    const text = searchInput.value.toLowerCase().trim();
-
+    const text = searchInput.value.toLowerCase();
 
     suggestions.innerHTML = "";
 
+    allTags
+        .filter(tag => tag.toLowerCase().includes(text))
+        .forEach(tag => {
 
-    if (text === "") {
+            const option = document.createElement("div");
 
-        return;
+            option.textContent = tag;
 
-    }
+            suggestions.appendChild(option);
 
+        });
 
-
-    allTags.forEach(tag => {
-
-
-        if (tag.toLowerCase().includes(text)) {
-
+});
 
 
             const option = document.createElement("div");
