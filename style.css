@@ -521,7 +521,7 @@ body {
 
 
 /* ==========================================================
-   AI MASONRY GALLERY
+   AI GALLERY
 ========================================================== */
 
 .ai-gallery {
@@ -539,7 +539,7 @@ body {
 
 .ai-gallery .card-item {
 
-    break-inside: avoid;
+    width: 100%;
 
 }
 
@@ -555,7 +555,6 @@ body {
     border-radius: 10px;
 
 }
-
 
 @media (max-width: 768px) {
 
