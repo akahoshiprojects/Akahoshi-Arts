@@ -83,7 +83,7 @@ const aiArts = [
         image: "Ai12.png",
         name: "Navia",
         series: "Genshin Impact",
-        tags: ["Character Design", "Fairy"]
+        tags: ["Character Design", "Fairy Tale"]
 
     }
 
