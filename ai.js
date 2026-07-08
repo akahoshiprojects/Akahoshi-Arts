@@ -77,6 +77,14 @@ const aiArts = [
         series: "Naruto",
         tags: ["Gender Bender"]
 
+    },
+
+    {
+        image: "Ai12.png",
+        name: "Navia",
+        series: "Genshin Impact",
+        tags: ["Character Design", "Fairy"]
+
     }
 
 ];
