@@ -18,7 +18,7 @@ const aiArts = [
         image: "Ai03.png",
         name: "Doraemon",
         series: "Doraemon",
-        tags: ["Gender Bender", "Design"]
+        tags: ["Gender Bender", "Character Design"]
     },
 
     {
@@ -33,6 +33,50 @@ const aiArts = [
         name: "Julius Novachrono",
         series: "Black Clover",
         tags: ["Gender Bender"]
+    },
+
+    {
+        image: "Ai06.png",
+        name: "Subg Jin Woo",
+        series: "Solo Leveling",
+        tags: ["Gender Bender"]
+    },
+
+    {
+        image: "Ai07.png",
+        name: "Cha Hae-in",
+        series: "Solo Leveling",
+        tags: ["Gender Bender", "Character Design"]
+    },
+
+    {
+        image: "Ai08.png",
+        name: "Abarai Renji",
+        series: "Bleach",
+        tags: ["Gender Bender"]
+    },
+
+    {
+        image: "Ai09.png",
+        name: "Hitsugaya Tôshirô",
+        series: "Bleach",
+        tags: ["Gender Bender"]
+    },
+
+    {
+        image: "Ai10.png",
+        name: "Hatake Kakashi",
+        series: "Naruto",
+        tags: ["Gender Bender"]
+
+    },
+
+    {
+        image: "Ai11.png",
+        name: "Hatake Kakashi",
+        series: "Naruto",
+        tags: ["Gender Bender"]
+
     }
 
 ];
