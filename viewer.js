@@ -5,13 +5,14 @@ const closeViewer = document.querySelector(".viewer-close");
 
 document.querySelectorAll("img").forEach(img => {
 
-    if (
-        img.closest(".home-button") ||
-        img.closest(".request-button") ||
-        img.closest(".gallery-title")
-    ) {
-        return;
-    }
+if (
+    img.closest(".home-button") ||
+    img.closest(".request-button") ||
+    img.closest(".gallery-title") ||
+    img.closest(".menu-button")
+) {
+    return;
+}
 
 
     img.addEventListener("click", () => {
