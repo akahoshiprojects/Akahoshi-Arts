@@ -18,8 +18,21 @@ document.querySelectorAll("img").forEach(img => {
 
         viewerImage.src = img.src;
 
-        viewer.style.display = "flex";
+viewerImage.className = "";
 
+if (img.closest(".card-item")) {
+
+    viewerImage.classList.add("zoom-card");
+
+}
+
+if (img.closest(".banner-item")) {
+
+    viewerImage.classList.add("zoom-banner");
+
+}
+
+viewer.style.display = "flex";
         document.body.style.overflow = "hidden";
 
     });
