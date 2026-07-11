@@ -3,11 +3,14 @@ const viewerImage = viewer.querySelector("img");
 const closeViewer = document.querySelector(".viewer-close");
 
 
+// Abrir imagen
+
 document.addEventListener("click", (e) => {
 
     const img = e.target;
 
     if (img.tagName !== "IMG") return;
+
 
     if (
         img.closest(".home-button") ||
@@ -19,6 +22,7 @@ document.addEventListener("click", (e) => {
         return;
     }
 
+
     viewerImage.src = img.src;
 
     viewer.style.display = "flex";
@@ -27,17 +31,6 @@ document.addEventListener("click", (e) => {
 
 });
 
-    img.addEventListener("click", () => {
-
-        viewerImage.src = img.src;
-
-        viewer.style.display = "flex";
-
-        document.body.style.overflow = "hidden";
-
-    });
-
-});
 
 
 // Cerrar haciendo click en la imagen ampliada
@@ -51,6 +44,7 @@ viewerImage.addEventListener("click", () => {
 });
 
 
+
 // Cerrar con la X
 
 closeViewer.addEventListener("click", () => {
@@ -60,6 +54,7 @@ closeViewer.addEventListener("click", () => {
     document.body.style.overflow = "";
 
 });
+
 
 
 // Cerrar tocando fuera
