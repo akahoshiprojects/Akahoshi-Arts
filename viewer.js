@@ -18,27 +18,27 @@ document.querySelectorAll("img").forEach(img => {
 
         viewerImage.src = img.src;
 
-viewerImage.className = "";
+        viewer.style.display = "flex";
 
-if (img.closest(".card-item")) {
-
-    viewerImage.classList.add("zoom-card");
-
-}
-
-if (img.closest(".banner-item")) {
-
-    viewerImage.classList.add("zoom-banner");
-
-}
-
-viewer.style.display = "flex";
         document.body.style.overflow = "hidden";
 
     });
 
 });
 
+
+// Cerrar haciendo click en la imagen ampliada
+
+viewerImage.addEventListener("click", () => {
+
+    viewer.style.display = "none";
+
+    document.body.style.overflow = "";
+
+});
+
+
+// Cerrar con la X
 
 closeViewer.addEventListener("click", () => {
 
@@ -48,6 +48,8 @@ closeViewer.addEventListener("click", () => {
 
 });
 
+
+// Cerrar tocando fuera
 
 viewer.addEventListener("click", (e) => {
 
