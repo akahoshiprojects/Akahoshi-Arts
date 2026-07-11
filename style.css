@@ -580,3 +580,61 @@ body {
     }
 
 }
+
+/* ==========================================================
+   IMAGE VIEWER
+========================================================== */
+
+.image-viewer {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.9);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 999;
+
+    padding: 30px;
+
+}
+
+
+.image-viewer img {
+
+    max-width: 95vw;
+
+    max-height: 95vh;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    cursor: zoom-in;
+
+}
+
+
+.viewer-close {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 30px;
+
+    color: white;
+
+    font-size: 50px;
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+}
