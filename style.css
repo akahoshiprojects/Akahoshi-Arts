@@ -638,3 +638,20 @@ body {
     z-index: 1000;
 
 }
+
+.zoom-card {
+
+    max-width: 98vw !important;
+
+    max-height: 98vh !important;
+
+}
+
+
+.zoom-banner {
+
+    max-width: 99vw !important;
+
+    max-height: 98vh !important;
+
+}
