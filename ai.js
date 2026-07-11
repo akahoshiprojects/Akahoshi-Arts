@@ -37,7 +37,7 @@ const aiArts = [
 
     {
         image: "Ai06.png",
-        name: "Subg Jin Woo",
+        name: "Sung Jin Woo",
         series: "Solo Leveling",
         tags: ["Gender Bender"]
     },
@@ -58,7 +58,7 @@ const aiArts = [
 
     {
         image: "Ai09.png",
-        name: "Hitsugaya Tôshirô",
+        name: "Hitsugaya Tōshirō",
         series: "Bleach",
         tags: ["Gender Bender"]
     },
@@ -68,7 +68,6 @@ const aiArts = [
         name: "Hatake Kakashi",
         series: "Naruto",
         tags: ["Gender Bender"]
-
     },
 
     {
@@ -76,7 +75,6 @@ const aiArts = [
         name: "Hatake Kakashi",
         series: "Naruto",
         tags: ["Gender Bender"]
-
     },
 
     {
@@ -84,7 +82,6 @@ const aiArts = [
         name: "Navia",
         series: "Genshin Impact",
         tags: ["Character Design", "Fairy Tale"]
-
     },
 
     {
@@ -92,7 +89,6 @@ const aiArts = [
         name: "Albedo",
         series: "Overlord",
         tags: ["Cross-referencing"]
-
     },
 
     {
@@ -100,7 +96,6 @@ const aiArts = [
         name: "Nami",
         series: "One Piece",
         tags: ["Cross-referencing"]
-
     }
 
 ];
@@ -114,7 +109,6 @@ const ITEMS_PER_LOAD = 30;
 
 let currentList = [];
 let currentIndex = 0;
-
 
 
 // =========================
@@ -149,13 +143,13 @@ function createCard(art) {
 
     card.className = "ai-card";
 
-    card.innerHTML = 
-        <img
-    src="Assets/AI/${art.image}"
-    alt="${art.name}"
-    loading="lazy"
-    decoding="async">
+    card.innerHTML = `
 
+        <img
+            src="Assets/AI/${art.image}"
+            alt="${art.name}"
+            loading="lazy"
+            decoding="async">
 
         <div class="ai-info">
 
@@ -183,6 +177,8 @@ function createCard(art) {
 
 }
 
+
+
 // =========================
 // INICIAR GALERÍA
 // =========================
@@ -207,7 +203,11 @@ function startGallery(list) {
 
 function loadMore() {
 
-    const end = Math.min(currentIndex + ITEMS_PER_LOAD, currentList.length);
+    const end = Math.min(
+        currentIndex + ITEMS_PER_LOAD,
+        currentList.length
+    );
+
 
     for (let i = currentIndex; i < end; i++) {
 
@@ -215,9 +215,12 @@ function loadMore() {
 
     }
 
+
     currentIndex = end;
 
 }
+
+
 
 // =========================
 // SCROLL INFINITO
@@ -227,7 +230,11 @@ window.addEventListener("scroll", () => {
 
     if (currentIndex >= currentList.length) return;
 
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
+
+    if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 600
+    ) {
 
         loadMore();
 
@@ -235,11 +242,14 @@ window.addEventListener("scroll", () => {
 
 });
 
+
+
 // =========================
 // BUSQUEDA GENERAL
 // =========================
 
 const searchData = [];
+
 
 aiArts.forEach(art => {
 
@@ -247,6 +257,7 @@ aiArts.forEach(art => {
         text: art.name,
         type: "character"
     });
+
 
     if (art.series) {
 
@@ -256,6 +267,7 @@ aiArts.forEach(art => {
         });
 
     }
+
 
     art.tags.forEach(tag => {
 
@@ -267,6 +279,7 @@ aiArts.forEach(art => {
     });
 
 });
+
 
 
 const uniqueSearch = searchData.filter((item, index, self) =>
@@ -286,7 +299,9 @@ searchInput.addEventListener("input", () => {
 
     const text = searchInput.value.trim().toLowerCase();
 
+
     suggestions.innerHTML = "";
+
 
     if (text === "") {
 
@@ -295,6 +310,7 @@ searchInput.addEventListener("input", () => {
         return;
 
     }
+
 
     uniqueSearch
 
@@ -306,18 +322,27 @@ searchInput.addEventListener("input", () => {
 
             const option = document.createElement("div");
 
+
             option.className = "tag-option";
 
+
             option.innerHTML = `
+
                 ${item.text}
-                <small>• ${item.type}</small>
+
+                <small>
+                    • ${item.type}
+                </small>
+
             `;
+
 
             option.onclick = () => {
 
                 searchInput.value = item.text;
 
                 suggestions.innerHTML = "";
+
 
                 const filtered = aiArts.filter(art =>
 
@@ -329,13 +354,16 @@ searchInput.addEventListener("input", () => {
 
                 );
 
+
                 startGallery(filtered);
 
             };
 
+
             suggestions.appendChild(option);
 
         });
+
 
 });
 
