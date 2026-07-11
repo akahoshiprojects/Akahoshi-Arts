@@ -20,6 +20,8 @@ document.querySelectorAll("img").forEach(img => {
 
         viewer.style.display = "flex";
 
+        document.body.style.overflow = "hidden";
+
     });
 
 });
@@ -29,6 +31,8 @@ closeViewer.addEventListener("click", () => {
 
     viewer.style.display = "none";
 
+    document.body.style.overflow = "";
+
 });
 
 
@@ -37,6 +41,8 @@ viewer.addEventListener("click", (e) => {
     if (e.target === viewer) {
 
         viewer.style.display = "none";
+
+        document.body.style.overflow = "";
 
     }
 
