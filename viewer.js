@@ -3,17 +3,29 @@ const viewerImage = viewer.querySelector("img");
 const closeViewer = document.querySelector(".viewer-close");
 
 
-document.querySelectorAll("img").forEach(img => {
+document.addEventListener("click", (e) => {
 
-if (
-    img.closest(".home-button") ||
-    img.closest(".request-button") ||
-    img.closest(".gallery-title") ||
-    img.closest(".menu-button")
-) {
-    return;
-}
+    const img = e.target;
 
+    if (img.tagName !== "IMG") return;
+
+    if (
+        img.closest(".home-button") ||
+        img.closest(".request-button") ||
+        img.closest(".gallery-title") ||
+        img.closest(".menu-button") ||
+        img.closest(".image-viewer")
+    ) {
+        return;
+    }
+
+    viewerImage.src = img.src;
+
+    viewer.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+
+});
 
     img.addEventListener("click", () => {
 
