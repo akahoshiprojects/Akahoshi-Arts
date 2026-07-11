@@ -601,25 +601,24 @@ body {
 
     z-index: 999;
 
-    padding: 30px;
+    padding: 0;
 
 }
 
 
 .image-viewer img {
 
-    max-width: 95vw;
+    width: 100vw;
 
-    max-height: 95vh;
+    height: 100vh;
 
     object-fit: contain;
 
-    border-radius: 10px;
+    border-radius: 0;
 
-    cursor: zoom-in;
+    cursor: pointer;
 
 }
-
 
 .viewer-close {
 
@@ -639,19 +638,3 @@ body {
 
 }
 
-.zoom-card {
-
-    max-width: 98vw !important;
-
-    max-height: 98vh !important;
-
-}
-
-
-.zoom-banner {
-
-    max-width: 99vw !important;
-
-    max-height: 98vh !important;
-
-}
