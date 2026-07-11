@@ -106,193 +106,16 @@ const aiArts = [
 ];
 
 
-
-const gallery = document.querySelector(".ai-gallery");;
+const gallery = document.querySelector(".ai-gallery");
 const searchInput = document.getElementById("tagSearch");
 const suggestions = document.querySelector(".tag-suggestions");
 
+const ITEMS_PER_LOAD = 30;
 
+let currentList = [];
+let currentIndex = 0;
 
-// =========================
-// CARGAR GALERÍA
-// =========================
 
-function loadGallery(list) {
-
-    gallery.innerHTML = "";
-
-    list.forEach(art => {
-
-        const card = document.createElement("div");
-
-        card.className = "ai-card";
-
-        card.innerHTML = `
-
-            <img src="Assets/AI/${art.image}" alt="${art.name}">
-
-            <div class="ai-info">
-
-                <span class="ai-name">
-                    ${art.name}
-                </span>
-
-
-                ${art.series ? 
-                    `<span class="ai-series">
-                        ${art.series}
-                    </span>` 
-                    : ""}
-
-
-                ${art.tags.map(tag =>
-                    `<span class="tag">
-                        ${tag}
-                    </span>`
-                ).join("")}
-
-            </div>
-
-        `;
-
-        gallery.appendChild(card);
-
-    });
-
-}
-
-
-
-// =========================
-// BUSQUEDA GENERAL
-// =========================
-
-const searchData = [];
-
-
-aiArts.forEach(art => {
-
-    searchData.push({
-
-        text: art.name,
-
-        type: "character"
-
-    });
-
-
-    if (art.series) {
-
-        searchData.push({
-
-            text: art.series,
-
-            type: "series"
-
-        });
-
-    }
-
-
-    art.tags.forEach(tag => {
-
-        searchData.push({
-
-            text: tag,
-
-            type: "tag"
-
-        });
-
-    });
-
-});
-
-
-// Eliminar duplicados
-
-const uniqueSearch = searchData.filter((item, index, self) =>
-    index === self.findIndex(t =>
-        t.text === item.text &&
-        t.type === item.type
-    )
-);
-
-
-
-// =========================
-// BUSCADOR
-// =========================
-
-searchInput.addEventListener("input", () => {
-
-    const text = searchInput.value.trim().toLowerCase();
-
-
-    suggestions.innerHTML = "";
-
-
-    if (text === "") return;
-
-
-
-    uniqueSearch
-
-        .filter(item =>
-            item.text.toLowerCase().includes(text)
-        )
-
-        .forEach(item => {
-
-
-            const option = document.createElement("div");
-
-
-            option.className = "tag-option";
-
-
-            option.innerHTML = `
-
-                ${item.text}
-
-                <small>
-                    • ${item.type}
-                </small>
-
-            `;
-
-
-
-            option.onclick = () => {
-
-                searchInput.value = item.text;
-
-                suggestions.innerHTML = "";
-
-
-                const filtered = aiArts.filter(art =>
-
-                    art.name === item.text ||
-
-                    art.series === item.text ||
-
-                    art.tags.includes(item.text)
-
-                );
-
-
-                loadGallery(filtered);
-
-            };
-
-
-            suggestions.appendChild(option);
-
-
-        });
-
-
-});
 
 // =========================
 // ORDEN ALEATORIO
@@ -315,8 +138,211 @@ function shuffle(array) {
 }
 
 
+
 // =========================
-// MOSTRAR TODO AL ABRIR
+// CREAR TARJETA
 // =========================
 
-loadGallery(shuffle(aiArts));
+function createCard(art) {
+
+    const card = document.createElement("div");
+
+    card.className = "ai-card";
+
+    card.innerHTML = 
+        <img
+    src="Assets/AI/${art.image}"
+    alt="${art.name}"
+    loading="lazy"
+    decoding="async">
+
+
+        <div class="ai-info">
+
+            <span class="ai-name">
+                ${art.name}
+            </span>
+
+            ${art.series ?
+                `<span class="ai-series">
+                    ${art.series}
+                </span>`
+                : ""}
+
+            ${art.tags.map(tag => `
+                <span class="tag">
+                    ${tag}
+                </span>
+            `).join("")}
+
+        </div>
+
+    `;
+
+    return card;
+
+}
+
+// =========================
+// INICIAR GALERÍA
+// =========================
+
+function startGallery(list) {
+
+    currentList = list;
+
+    currentIndex = 0;
+
+    gallery.innerHTML = "";
+
+    loadMore();
+
+}
+
+
+
+// =========================
+// CARGAR MÁS IMÁGENES
+// =========================
+
+function loadMore() {
+
+    const end = Math.min(currentIndex + ITEMS_PER_LOAD, currentList.length);
+
+    for (let i = currentIndex; i < end; i++) {
+
+        gallery.appendChild(createCard(currentList[i]));
+
+    }
+
+    currentIndex = end;
+
+}
+
+// =========================
+// SCROLL INFINITO
+// =========================
+
+window.addEventListener("scroll", () => {
+
+    if (currentIndex >= currentList.length) return;
+
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
+
+        loadMore();
+
+    }
+
+});
+
+// =========================
+// BUSQUEDA GENERAL
+// =========================
+
+const searchData = [];
+
+aiArts.forEach(art => {
+
+    searchData.push({
+        text: art.name,
+        type: "character"
+    });
+
+    if (art.series) {
+
+        searchData.push({
+            text: art.series,
+            type: "series"
+        });
+
+    }
+
+    art.tags.forEach(tag => {
+
+        searchData.push({
+            text: tag,
+            type: "tag"
+        });
+
+    });
+
+});
+
+
+const uniqueSearch = searchData.filter((item, index, self) =>
+    index === self.findIndex(t =>
+        t.text === item.text &&
+        t.type === item.type
+    )
+);
+
+
+
+// =========================
+// BUSCADOR
+// =========================
+
+searchInput.addEventListener("input", () => {
+
+    const text = searchInput.value.trim().toLowerCase();
+
+    suggestions.innerHTML = "";
+
+    if (text === "") {
+
+        startGallery(shuffle(aiArts));
+
+        return;
+
+    }
+
+    uniqueSearch
+
+        .filter(item =>
+            item.text.toLowerCase().includes(text)
+        )
+
+        .forEach(item => {
+
+            const option = document.createElement("div");
+
+            option.className = "tag-option";
+
+            option.innerHTML = `
+                ${item.text}
+                <small>• ${item.type}</small>
+            `;
+
+            option.onclick = () => {
+
+                searchInput.value = item.text;
+
+                suggestions.innerHTML = "";
+
+                const filtered = aiArts.filter(art =>
+
+                    art.name === item.text ||
+
+                    art.series === item.text ||
+
+                    art.tags.includes(item.text)
+
+                );
+
+                startGallery(filtered);
+
+            };
+
+            suggestions.appendChild(option);
+
+        });
+
+});
+
+
+
+// =========================
+// CARGA INICIAL
+// =========================
+
+startGallery(shuffle(aiArts));
