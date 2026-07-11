@@ -85,6 +85,22 @@ const aiArts = [
         series: "Genshin Impact",
         tags: ["Character Design", "Fairy Tale"]
 
+    },
+
+    {
+        image: "Ai13.png",
+        name: "Albedo",
+        series: "Overlord",
+        tags: ["Cross-referencing"]
+
+    },
+
+    {
+        image: "Ai14.png",
+        name: "Nami",
+        series: "One Piece",
+        tags: ["Cross-referencing"]
+
     }
 
 ];
