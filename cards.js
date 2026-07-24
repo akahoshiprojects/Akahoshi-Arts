@@ -46,9 +46,9 @@ const cards = [
     { image: "Paint37.png", name: "Hitagi Senjougahara", series: "Bakemonogatari" },
     { image: "Paint38.png", name: "Ayanami Rei", series: "Neon Genesis Evangelion" },
     { image: "Paint39.png", name: "Steve Harrington", series: "Stranger Things" },
-    { image: "paint40.webp", name: "Rebecca", series: "Cyberpunk: Edgeruners" },
+    { image: "Paint40.webp", name: "Rebecca", series: "Cyberpunk: Edgeruners" },
 
-    { image: "paint41.png", name: "Alisa Mikhailovna Kujou", series: "Alya Sometimes Hides Her Feelings in Russian" }
+    { image: "Paint41.png", name: "Alisa Mikhailovna Kujou", series: "Alya Sometimes Hides Her Feelings in Russian" }
     
 ];
 
