@@ -49,7 +49,8 @@ const cards = [
     { image: "Paint40.webp", name: "Rebecca", series: "Cyberpunk: Edgeruners" },
 
     { image: "Paint41.png", name: "Alisa Mikhailovna Kujou", series: "Alya Sometimes Hides Her Feelings in Russian" },
-    { image: "Paint42.png", name: "Anya Forger", series: "Spy x Family" }
+    { image: "Paint42.png", name: "Anya Forger", series: "Spy x Family" },
+    { image: "Paint43.png", name: "Yumeko Shikiya", series: "Too Many Losing Heroines!" }
     
 ];
 
