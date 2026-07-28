@@ -48,7 +48,8 @@ const cards = [
     { image: "Paint39.png", name: "Steve Harrington", series: "Stranger Things" },
     { image: "Paint40.webp", name: "Rebecca", series: "Cyberpunk: Edgeruners" },
 
-    { image: "Paint41.png", name: "Alisa Mikhailovna Kujou", series: "Alya Sometimes Hides Her Feelings in Russian" }
+    { image: "Paint41.png", name: "Alisa Mikhailovna Kujou", series: "Alya Sometimes Hides Her Feelings in Russian" },
+    { image: "Paint42.png", name: "Anya Forger", series: "Spy x Family" }
     
 ];
 
