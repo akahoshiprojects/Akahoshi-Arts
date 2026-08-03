@@ -50,7 +50,8 @@ const cards = [
 
     { image: "Paint41.png", name: "Alisa Mikhailovna Kujou", series: "Alya Sometimes Hides Her Feelings in Russian" },
     { image: "Paint42.png", name: "Anya Forger", series: "Spy x Family" },
-    { image: "Paint43.png", name: "Yumeko Shikiya", series: "Too Many Losing Heroines!" }
+    { image: "Paint43.png", name: "Yumeko Shikiya", series: "Too Many Losing Heroines!" },
+    { image: "Paint44.png", name: "Nagito Komaeda", series: "Danganronpa 2: Goodbye Despair" }
     
 ];
 
