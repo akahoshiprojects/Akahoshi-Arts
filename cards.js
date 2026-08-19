@@ -51,7 +51,11 @@ const cards = [
     { image: "Paint41.png", name: "Alisa Mikhailovna Kujou", series: "Alya Sometimes Hides Her Feelings in Russian" },
     { image: "Paint42.png", name: "Anya Forger", series: "Spy x Family" },
     { image: "Paint43.png", name: "Yumeko Shikiya", series: "Too Many Losing Heroines!" },
-    { image: "Paint44.png", name: "Nagito Komaeda", series: "Danganronpa 2: Goodbye Despair" }
+    { image: "Paint44.png", name: "Nagito Komaeda", series: "Danganronpa 2: Goodbye Despair" },
+    { image: "Paint45.png", name: "Miku Okazaki", series: "Gal Gohan" },
+
+    { image: "Paint46.png", name: "Hibari", series: "Senran Kagura" },
+    { image: "Paint47.png", name: "Rider", series: "Fate Stay Night" }
     
 ];
 
