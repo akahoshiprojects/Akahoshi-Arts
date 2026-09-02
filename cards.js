@@ -56,7 +56,7 @@ const cards = [
 
     { image: "Paint46.png", name: "Hibari", series: "Senran Kagura" },
     { image: "Paint47.png", name: "Rider", series: "Fate Stay Night" },
-    { image: "Paint48.png", name "Murasaki", series: "Senran Kagura" },
+    { image: "Paint48.png", name: "Murasaki", series: "Senran Kagura" },
     { image: "Paint49.png", name: "Haru Okumura", series: "Persona 5" }
     
 ];
