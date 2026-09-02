@@ -12,13 +12,13 @@ const cards = [
     { image: "Paint09.png", name: "Hinata Shoyo", series: "Haikyu" },
     { image: "Paint10.png", name: "Jinshi & Maomao", series: "The Apothecary Diaries" },
 
-    { image: "Paint11.png", name: "Xe Lian", series: "Tian Guan Ci Fu" },
+    { image: "Paint11.png", name: "Xie Lian", series: "Tian Guan Ci Fu" },
     { image: "Paint12.png", name: "Leona Kingscholar", series: "Twisted Wonderland" },
     { image: "Paint13.png", name: "Ikuyo Kita", series: "Bocchi the Rock!" },
     { image: "Paint14.png", name: "Hinata Hyuuga", series: "Naruto" },
     { image: "Paint15.png", name: "Naruhina II", series: "Naruto" },
 
-    { image: "Paint16.png", name: "Ishimori Uka", series: "Honey Lemmon Soda" },
+    { image: "Paint16.png", name: "Ishimori Uka", series: "Honey Lemon Soda" },
     { image: "Paint17.png", name: "Tsuyu Asui", series: "My Hero Academia" },
     { image: "Paint18.png", name: "Momoshiki Ootsutsuki", series: "Naruto" },
     { image: "Paint19.png", name: "Tomura Shigaraki", series: "My Hero Academia" },
@@ -46,7 +46,7 @@ const cards = [
     { image: "Paint37.png", name: "Hitagi Senjougahara", series: "Bakemonogatari" },
     { image: "Paint38.png", name: "Ayanami Rei", series: "Neon Genesis Evangelion" },
     { image: "Paint39.png", name: "Steve Harrington", series: "Stranger Things" },
-    { image: "Paint40.webp", name: "Rebecca", series: "Cyberpunk: Edgeruners" },
+    { image: "Paint40.webp", name: "Rebecca", series: "Cyberpunk: Edgerunners" },
 
     { image: "Paint41.png", name: "Alisa Mikhailovna Kujou", series: "Alya Sometimes Hides Her Feelings in Russian" },
     { image: "Paint42.png", name: "Anya Forger", series: "Spy x Family" },
@@ -55,7 +55,7 @@ const cards = [
     { image: "Paint45.png", name: "Miku Okazaki", series: "Gal Gohan" },
 
     { image: "Paint46.png", name: "Hibari", series: "Senran Kagura" },
-    { image: "Paint47.png", name: "Rider", series: "Fate Stay Night" },
+    { image: "Paint47.png", name: "Rider", series: "Fate/Stay Night" },
     { image: "Paint48.png", name: "Murasaki", series: "Senran Kagura" },
     { image: "Paint49.png", name: "Haru Okumura", series: "Persona 5" }
     
